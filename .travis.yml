@@ -7,4 +7,4 @@ python:
 install:
   - "pip install -r requirements/base.txt"
 # command to run tests
-script: "python manage.py test"
+script: "python manage.py test --settings=jmad.settings.base"
