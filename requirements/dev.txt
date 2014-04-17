@@ -1,0 +1,3 @@
+-r base.txt
+
+django-tdd==0.1.0
