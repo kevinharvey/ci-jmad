@@ -25,19 +25,19 @@ class TunesFunctionalTestCase(LiveServerTestCase):
         username_input = self.selenium.find_element_by_name("username")
         username_input.send_keys('user')
         password_input = self.selenium.find_element_by_name("password")
-        passowrd_input.send_keys('password')
-        self.selenium.find_element_by_css('form#tuw-login input#tuw-submit-login')
+        password_input.send_keys('password')
+        self.selenium.find_element_by_css_selector('form#tuw-login input#tuw-submit-login')
 
         # she clicks the "Add new info" button
-        self.selenium.find_element_by_css('a#tuw-add-new-info').click()
+        self.selenium.find_element_by_css_selector('a#tuw-add-new-info').click()
 
         # and then selects "Tune"
-        self.selenium.find_element_by_css('a#tuw-tune-edit').click()
+        self.selenium.find_element_by_css_selector('a#tuw-tune-edit').click()
 
         # she searches for the word "Night"
         search_form = self.selenium.find_element_by_name("search")
         search_form.send_keys("Night")
-        self.selenium.find_element_by_css('form#tuw-login input#tuw-submit-search') 
+        self.selenium.find_element_by_css_selector('form#tuw-login input#tuw-submit-search') 
 
         # and sees a few options
         #   "The Night Has a Thousand Eyes"

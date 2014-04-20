@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n add_css %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'login' %}">
+
+  <div class="input-group">
+    {{ form.username.label }}
+    {{ form.username|add_class:"form-control" }}
+  </div>
+
+  <div class="input-group">
+    {{ form.password.label }}
+    {{ form.password|add_class:"form-control" }}
+  </div>
+
+  <button class="btn btn-default" type="sumbit">{% trans "Login" %}</button>
+
+</form>
+{% endblock content %}

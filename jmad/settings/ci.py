@@ -10,7 +10,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party stuff
+    'authtools',
+
+    # JMAD apps
     'tunes',
+    
+    # CI stuff
     'django_jenkins',
 )
 

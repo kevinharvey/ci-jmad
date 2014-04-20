@@ -21,6 +21,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = []
 
+# Hand over auth to django-authtools
+AUTH_USER_MODEL = 'authtools.User'
 
 # Application definition
 
@@ -31,6 +33,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Third-party stuff
+    'authtools',
+
+    # JMAD apps
     'tunes',
 )
 
