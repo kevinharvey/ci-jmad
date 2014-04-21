@@ -34,11 +34,11 @@ class TunesFunctionalTestCase(LiveServerTestCase):
         password_input.send_keys('password')
         self.selenium.find_element_by_css_selector('form#tuw-login button#tuw-submit-login').click()
 
-        # she clicks the "Add new info" button
-        self.selenium.find_element_by_css_selector('a#tuw-add-new-info').click()
+        # she clicks the "Tunes" nav button
+        self.selenium.find_element_by_css_selector('a#tuw-tunes').click()
 
-        # and then selects "Tune"
-        self.selenium.find_element_by_css_selector('a#tuw-tune-edit').click()
+        # and then clicks "Add a New Tune"
+        self.selenium.find_element_by_css_selector('a#tuw-tune-new').click()
 
         # she searches for the word "Night"
         search_form = self.selenium.find_element_by_name("search")
