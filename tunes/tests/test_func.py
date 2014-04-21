@@ -1,10 +1,16 @@
 from django.test import LiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
 
+from authtools.models import User
+
 class TunesFunctionalTestCase(LiveServerTestCase):
 
     @classmethod
     def setUpClass(self):
+        self.user = User.objects.create(email="jill@example.com")
+        self.user.set_password("password")
+        self.user.save()
+        
         self.selenium = WebDriver()
         super(TunesFunctionalTestCase, self).setUpClass()
 
@@ -23,10 +29,10 @@ class TunesFunctionalTestCase(LiveServerTestCase):
         self.selenium.get(self.live_server_url)
         self.selenium.find_element_by_css_selector("a#tuw-login").click()
         username_input = self.selenium.find_element_by_name("username")
-        username_input.send_keys('user')
+        username_input.send_keys('jill@example.com')
         password_input = self.selenium.find_element_by_name("password")
         password_input.send_keys('password')
-        self.selenium.find_element_by_css_selector('form#tuw-login button#tuw-submit-login')
+        self.selenium.find_element_by_css_selector('form#tuw-login button#tuw-submit-login').click()
 
         # she clicks the "Add new info" button
         self.selenium.find_element_by_css_selector('a#tuw-add-new-info').click()
