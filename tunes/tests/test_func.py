@@ -38,7 +38,7 @@ class TunesFunctionalTestCase(LiveServerTestCase):
         self.selenium.find_element_by_css_selector('a#tuw-tunes').click()
 
         # and then clicks "Add a New Tune"
-        self.selenium.find_element_by_css_selector('a#tuw-tune-new').click()
+        self.selenium.find_element_by_css_selector('a#tuw-new-tune').click()
 
         # she searches for the word "Night"
         search_form = self.selenium.find_element_by_name("search")

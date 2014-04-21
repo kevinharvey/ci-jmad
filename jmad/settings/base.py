@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'authtools',
 
     # JMAD apps
+    'people',
     'tunes',
 )
 

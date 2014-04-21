@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
   <h1>Tunes</h1>
+  
+  <a class="btn btn-default" id="tuw-new-tune">
+    {% trans "Add a New Tune" %}
+  </a>  
 {% endblock %}
