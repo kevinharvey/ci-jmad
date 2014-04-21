@@ -3,19 +3,34 @@
 
 {% block content %}
 
-<form method="POST" action="{% url 'login' %}">
-
-  <div class="input-group">
-    {{ form.username.label }}
-    {{ form.username|add_class:"form-control" }}
+{% for error in form.non_field_errors %}
+  <div class="alert alert-danger">
+    {{ error }}
   </div>
+{% endfor %}
 
-  <div class="input-group">
-    {{ form.password.label }}
-    {{ form.password|add_class:"form-control" }}
-  </div>
+<form method="POST" id="tuw-login"
+  action="{% url 'login' %}">{% csrf_token %}
 
-  <button class="btn btn-default" type="sumbit">{% trans "Login" %}</button>
+  {% for field in form %}
+    <div class="form-group{% if field.errors %} has-error has-feedback{% endif %}">
+      <label class="control-label" for="{{ field.id_for_label }}">
+        {{ field.label }}
+      </label>  
+      {{ field|add_class_to_field:"form-control" }}
+    
+      {% if field.errors %}
+        {% for error in field.errors %}
+          <p class="help-block">{{ error }}</p>
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button type="submit"
+    id="tuw-submit-login" class="btn btn-default">
+    {% trans "Login" %}
+  </button>
 
 </form>
 {% endblock content %}

@@ -26,7 +26,7 @@ class TunesFunctionalTestCase(LiveServerTestCase):
         username_input.send_keys('user')
         password_input = self.selenium.find_element_by_name("password")
         password_input.send_keys('password')
-        self.selenium.find_element_by_css_selector('form#tuw-login input#tuw-submit-login')
+        self.selenium.find_element_by_css_selector('form#tuw-login button#tuw-submit-login')
 
         # she clicks the "Add new info" button
         self.selenium.find_element_by_css_selector('a#tuw-add-new-info').click()
