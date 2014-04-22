@@ -10,4 +10,4 @@ before_script: "export SECRET_KEY='dnqsj22jdv9wjsldfub9'"
 # command to run tests
 script: 
  - "coverage run --source='.' manage.py test --settings=jmad.settings.base"
- - "coverage report --fail-under=85"
+ - "coverage report --fail-under=85 --omit=*test*,*settings*"
