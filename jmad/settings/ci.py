@@ -28,5 +28,3 @@ JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
 )
 
-PYLINT_RCFILE = os.path.join(BASE_DIR, 'settings', 'pylint.rc')
-
