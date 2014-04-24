@@ -22,9 +22,15 @@ INSTALLED_APPS = (
     'django_jenkins',
 )
 
+# Tasks to run in Jenkins
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pylint',
     'django_jenkins.tasks.with_coverage',
     'django_jenkins.tasks.run_pep8',
 )
 
+# Tell Jenkins what apps to work on
+PROJECT_APPS = (
+    'people',
+    'tunes',
+)
