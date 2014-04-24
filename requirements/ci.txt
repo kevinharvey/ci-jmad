@@ -1,6 +1,6 @@
 -r base.txt
 
 coverage==3.7.1
-django-jenkins==0.14.1
+django-jenkins==0.15.0
 pep8==1.5.6
 selenium==2.41.0
